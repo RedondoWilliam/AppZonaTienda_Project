@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_homapage_vertical_spacing">3dp</dimen>
+    <dimen name="aspec_ratio_image_profile">30dp</dimen>
+</resources>

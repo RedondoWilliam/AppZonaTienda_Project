@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">ensayo</string>
+    <string name="element_inicio">INICIO</string>
+    <string name="element_visita">VISITA</string>
+    <string name="element_chad">CHAD</string>
+    <string name="element_post">POST</string>
+    <string name="element_ordena">ORDENA</string>
+    <string name="element_carrito">CARRITO</string>
+    <string name="element_gps">GPS</string>
+    <string name="element_promociones">
+        muestra de ofertas de tiendas según el perfíl y los
+        gustos del usuario, también de anuncios pagados por las tiendas registradas
+    </string>
+    <string name="element_vista_de_tiendas_section_sugerido_para_ti">
+        vista de tiendas cerca del usuario,
+        resaltando negocios e intereses del usuario
+    </string>
+    <string name="element_sugerido_para_ti">sugerido para tí</string>
+    <string name="element_vista_de_tiendas_section_tiendas_cerca">
+        vista de tiendas cerca del usuario,
+        resaltando negocios e intereses del usuario
+    </string>
+    <string name="element_tiendas_cerca">tiendas cerca</string>
+    <string name="element_restaurantes">restaurantes</string>
+    <string name="element_parqueaderos">parqueaderos</string>
+    <string name="element_spa">spá</string>
+    <string name="element_papelerias">papelerías</string>
+    <string name="element_peluquerias">peluquerías</string>
+    <string name="element_bares">bares</string>
+    <string name="element_discotecas">discotecas</string>
+    <string name="element_sitiostranqui">sitios tranqui</string>
+    <string name="element_estas_aqui">estás aquí</string>
+    <string name="element_tus_tiendas">tus tiendas</string>
+    <string name="element_domicilio">domicilio</string>
+    <string name="element_preguntame">pregúntame</string>
+    <string name="element_foto_perfil">foto perfil</string>
+    <string name="element_barra_de_busqueda">Barra de búsqueda</string>
+    <string name="element_opciones">opciones</string>
+    <string name="element_lupa">lupa</string>
+    <string name="element_storesbottom">stores bottom</string>
+    <string name="storeOptions">stores options </string>
+    <string name="navigation_rail_ensayo">Navigation Rail Ensayo</string>
+    <string name="descriptioniconoptionshomepage">Botón de opciones de pantalla principal</string>
+    <string name="buscar">Buscar...</string>
+    <string name="image_profile">imagen de perfil de usuario en línea</string>
+    <string name="text_options">panel de opciones</string>
+
+
+
+
+</resources>
