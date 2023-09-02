@@ -11,8 +11,6 @@ import androidx.compose.material.icons.filled.Chat
 import androidx.compose.material.icons.filled.DoorFront
 import androidx.compose.material.icons.filled.PostAdd
 import androidx.compose.material.icons.filled.Store
-import androidx.compose.material3.DrawerDefaults
-import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -27,6 +25,7 @@ import androidx.compose.ui.res.stringResource
 import com.ensayo.example.data.NavigationType
 import com.ensayo.example.data.local.StoresBottom
 import com.example.ensayo.R
+import com.example.pruebasejercicioensayo.PruebaTopAppBar.PrincipalScreenTopAppBar
 
 
 @SuppressLint("SuspiciousIndentation")
@@ -77,7 +76,8 @@ private fun EnsayoAppContent(
     navigationItemContentList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ){
-    Box (modifier = modifier){
+    Box (modifier = modifier
+        .fillMaxSize()){
         val navigationRailEnsayoContentDescription =
             stringResource(id = R.string.navigation_rail_ensayo)
         EnsayoNavigationRail(
@@ -91,8 +91,8 @@ private fun EnsayoAppContent(
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.inverseOnSurface)
         ){
-           EnsayoListOnlyContent(
-               modifier = modifier.weight(1f)
+           PrincipalScreenTopAppBar(
+               modifier.weight(1f)
            )
            EnsayoBottomNavigationBar(
                currentTab = ensayoUiState.currentEnsayoBoxType,

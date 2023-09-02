@@ -17,7 +17,7 @@ fun HomePromotionsStore(
 ){
     Column(
         modifier =modifier
-            .padding(8.dp)
+            .padding(start = 8.dp)
             .fillMaxWidth()
     ) {
         OptionsCardSections(

@@ -1,7 +1,6 @@
 package com.ensayo.example.ui.EnsayoHomeContentElement
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -26,7 +25,7 @@ fun DescriptionSectionCard(
     options: String,
 ){
     Row(
-        modifier = modifier.padding(8.dp)
+        modifier = modifier.padding(start = 8.dp)
     ) {
         OptionsCardSections(options = options)
     }

@@ -1,7 +1,6 @@
 package com.ensayo.example.ui.EnsayoHomeContentElement
 
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
@@ -19,7 +18,7 @@ fun CardStoresHome(
     optionsStore: String
 ) {
     LazyRow(
-        modifier = modifier.padding(8.dp)
+        modifier = modifier.padding(start = 8.dp)
     ) {
         item {
             for (i in 1..6) {
