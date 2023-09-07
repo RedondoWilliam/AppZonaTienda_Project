@@ -15,24 +15,25 @@
         vista de tiendas cerca del usuario,
         resaltando negocios e intereses del usuario
     </string>
-    <string name="element_sugerido_para_ti">sugerido para tí</string>
+    <string name="element_sugerido_para_ti">Sugerido para tí</string>
     <string name="element_vista_de_tiendas_section_tiendas_cerca">
         vista de tiendas cerca del usuario,
         resaltando negocios e intereses del usuario
     </string>
-    <string name="element_tiendas_cerca">tiendas cerca</string>
-    <string name="element_restaurantes">restaurantes</string>
-    <string name="element_parqueaderos">parqueaderos</string>
+    <string name="element_principal">Principal</string>
+    <string name="element_tiendas_cerca">Tiendas cerca</string>
+    <string name="element_restaurantes">Restaurantes</string>
+    <string name="element_parqueaderos">Parqueaderos</string>
     <string name="element_spa">spá</string>
     <string name="element_papelerias">papelerías</string>
     <string name="element_peluquerias">peluquerías</string>
-    <string name="element_bares">bares</string>
+    <string name="element_bares">Bares</string>
     <string name="element_discotecas">discotecas</string>
     <string name="element_sitiostranqui">sitios tranqui</string>
-    <string name="element_estas_aqui">estás aquí</string>
-    <string name="element_tus_tiendas">tus tiendas</string>
-    <string name="element_domicilio">domicilio</string>
-    <string name="element_preguntame">pregúntame</string>
+    <string name="element_estas_aqui">Estás aquí</string>
+    <string name="element_tus_tiendas">Tus tiendas</string>
+    <string name="element_domicilio">Domicilio</string>
+    <string name="element_preguntame">Pregúntame</string>
     <string name="element_foto_perfil">foto perfil</string>
     <string name="element_barra_de_busqueda">Barra de búsqueda</string>
     <string name="element_opciones">opciones</string>
@@ -44,6 +45,46 @@
     <string name="buscar">Buscar...</string>
     <string name="image_profile">imagen de perfil de usuario en línea</string>
     <string name="text_options">panel de opciones</string>
+    <string name="description_estas_aqui">estás aquí mi amigo</string>
+    <string name="description_tus_tiendas">estas son tus tiendas</string>
+    <string name="description_domicilio">esta es la sección de domicilio</string>
+    <string name="description_preguntame">acá puedes hacernos preguntas</string>
+    <string name="description_heart_score_subsection_near_store">ícono de corazón de puntuación para tiendas cerca</string>
+    <string name="element_entretenimiento">Entretenimiento</string>
+    <string name="element_sitios_de_comida">Sitios de comida</string>
+    <string name="element_estancia">Estancia</string>
+
+
+<!--    elementos temporales **************************************************************,-->
+
+<!--    tienda cerca 1-->
+    <string name="element_likes_score_first">3.2k</string>
+    <string name="element_starts_score_first">5</string>
+    <string name="element_nameitem_nearstore_first">Papelería Bar</string>
+    <string name="element_descriptionresumestore_nearstore_first">Cuadernos de marca personalizados</string>
+    <string name="element_hours_store_nearstore_first">Abierto hasta las 8 PM</string>
+    <string name="element_estimated_position_nearstore_first">A 5 minutos de tí.</string>
+
+<!--    tienda cerca 2-->
+    <string name="element_likes_score_second">300</string>
+    <string name="element_nameitem_nearstore_second">Libreria José</string>
+    <string name="element_descriptionresumestore_nearstore_second">Libros de todos los temas</string>
+    <string name="element_hours_store_nearstore_second">Abierto hasta las 11 PM</string>
+    <string name="element_estimated_position_nearstore_second">A 10 minutos de tí.</string>
+
+    <!--    tienda cerca 3-->
+    <string name="element_likes_score_third">800</string>
+    <string name="element_nameitem_nearstore_third">S.T.Phones</string>
+    <string name="element_descriptionresumestore_nearstore_third">Servicio técnico profesional</string>
+    <string name="element_hours_store_nearstore_third">Abierto hasta las 9 PM</string>
+    <string name="element_estimated_position_nearstore_third">A 9 minutos de tí.</string>
+
+    <!--    tienda cerca 4-->
+    <string name="element_likes_score_four">1.2k</string>
+    <string name="element_nameitem_nearstore_four">Peluquería Aleja</string>
+    <string name="element_descriptionresumestore_nearstore_four">Servicio Profesional de cortes</string>
+    <string name="element_hours_store_nearstore_four">Abierto hasta las 10 PM</string>
+    <string name="element_estimated_position_nearstore_four">A 3 minutos de tí.</string>
 
 
 

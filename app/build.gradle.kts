@@ -63,6 +63,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     implementation("androidx.compose.foundation:foundation-layout-android:1.5.0")
+    implementation ("androidx.compose.material:material-icons-core:1.5.0")
 
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.06.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")

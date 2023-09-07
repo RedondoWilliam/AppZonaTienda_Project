@@ -37,8 +37,11 @@ val typography = Typography(
     bodyMedium = TextStyle(
         fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
-        lineHeight = 20.sp,
-        letterSpacing = 0.25.sp
+        lineHeight = 15.sp,
+        letterSpacing = 0.25.sp,
+        fontFamily = FontFamily(
+            Font(R.font.raleway_bold, FontWeight.Bold)
+        )
     ),
     labelMedium = TextStyle(
         fontWeight = FontWeight.SemiBold,
