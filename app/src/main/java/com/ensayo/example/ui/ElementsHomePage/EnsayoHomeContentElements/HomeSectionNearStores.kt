@@ -1,22 +1,29 @@
 package com.ensayo.example.ui.ElementsHomePage.EnsayoHomeContentElements
 
+import android.annotation.SuppressLint
 import androidx.annotation.DrawableRes
 import androidx.annotation.FontRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+//import androidx.compose.foundation.layout.ColumnScopeInstance.align
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
@@ -28,6 +35,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalConsumer
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.PlatformTextStyle
@@ -42,7 +51,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ensayo.example.data.local.NearStoresValues
 import com.ensayo.example.data.local.StoresBottom
+import com.ensayo.example.ui.commonElements.textCommonHomePage
 import com.ensayo.example.ui.theme.EnsayoTheme
+import com.ensayo.example.ui.theme.typography
 import com.example.ensayo.R
 
 @Composable
@@ -80,17 +91,24 @@ fun ContenSubSectionNearStore(
     @StringRes  productsStoreSubsection: Int,
     @StringRes  likesScoreStoreSubsection: Int
 ){
+
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(3.dp))
+            .height(260.dp)
+            .width(200.dp),
+        contentAlignment = Alignment.TopEnd
     ) {
+
         Image(
-            modifier = modifier
-                .height(187.dp)
-                .width(127.dp),
             painter = painterResource(id = imageSubSectionPrincipal),
             contentDescription = "",
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Crop,
+            modifier = modifier
+                .fillMaxSize(),
+        )
+        LikesReactions(
+            modifier.padding(top = 7.dp, end = 7.dp)
         )
         ContentSubSectionNearStoreInformation(
             stateOpenCloseStoreSubsection =stateOpenCloseStoreSubsection,
@@ -98,10 +116,11 @@ fun ContenSubSectionNearStore(
             nameStoreSubsection =  nameStoreSubsection,
             productsStoreSubsection = productsStoreSubsection,
             likesScoreStoreSubsection = likesScoreStoreSubsection,
-            modifier = modifier.align(Alignment.BottomEnd),
+            modifier = modifier
+                .align(Alignment.BottomEnd)
+                .padding(bottom = 7.dp, end = 7.dp),
         )
     }
-
 }
 
 @Composable
@@ -114,19 +133,25 @@ fun ContentSubSectionNearStoreInformation(
     @StringRes  likesScoreStoreSubsection: Int
 ){
     Column(
-//        verticalArrangement = Arrangement.SpaceBetween,
         modifier = modifier
-            .clip(RoundedCornerShape(3.dp))
-            .height(85.dp)
-            .width(127.dp)
-            .background(MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.81f)),
+            .clip(
+                RoundedCornerShape(
+                    bottomStart = 0.dp, topEnd = 10.dp, topStart = 10.dp, bottomEnd = 10.dp
+                )
+            )
+            .height(68.dp)
+            .width(188.dp)
+            .background(
+                colorResource(
+                    id = R.color.color_content_information_nears_stores
+                ).copy(alpha = 0.81f),
+            ),
     ) {
         NearStoreInformationNameAndDescriptionItem(
             nameStoreSubsection= nameStoreSubsection ,
             productsStoreSubsection = productsStoreSubsection,
-            likesScoreStoreSubsection = likesScoreStoreSubsection
+            likesScoreStoreSubsection = likesScoreStoreSubsection,
         )
-        Spacer(modifier = modifier.height(4.dp))
         StateAndPositionInformation(
             stateOpenCloseStoreSubsection = stateOpenCloseStoreSubsection,
             statePositionNearYouStoreSubsection = statePositionNearYouStoreSubsection
@@ -143,61 +168,29 @@ fun  NearStoreInformationNameAndDescriptionItem(
     @StringRes  productsStoreSubsection: Int,
     @StringRes  likesScoreStoreSubsection: Int
 ){
-   Row() {
-       Column(
-       ) {
-           Text(
-               modifier = modifier
-                   .width(91.dp),
-               text = stringResource(id = nameStoreSubsection),
-               maxLines = 1,
-               style = LocalTextStyle.current.merge(
-                   TextStyle(
-                       lineHeight = 14.sp,
-                       platformStyle = PlatformTextStyle(
-                           includeFontPadding = false
-                       ),
-                       fontSize =10.sp,
-                       lineHeightStyle = LineHeightStyle(
-                           alignment = LineHeightStyle.Alignment.Bottom,
-                           trim = LineHeightStyle.Trim.None
-                       ),
-                       fontFamily = FontFamily(
-                           Font(R.font.raleway_extra_bold)
-                       ),
-                       color =  MaterialTheme.colorScheme.onPrimaryContainer
-                   )
-               )
-           )
-           Text(
-               modifier = modifier
-                   .width(91.dp),
-               text = stringResource(id =  productsStoreSubsection),
-               maxLines = 2,
-               style = LocalTextStyle.current.merge(
-                   TextStyle(
-                       lineHeight = 9.sp,
-                       platformStyle = PlatformTextStyle(
-                           includeFontPadding = false
-                       ),
-                       fontSize =9.sp,
-                       lineHeightStyle = LineHeightStyle(
-                           alignment = LineHeightStyle.Alignment.Bottom,
-                           trim = LineHeightStyle.Trim.None
-                       ),
-                       fontFamily = FontFamily(
-                           Font(R.font.raleway_light)
-                       ),
-                       color =  MaterialTheme.colorScheme.onPrimaryContainer
-                   )
-               )
-           )
-       }
-       Spacer(modifier = modifier.width(4.dp))
-       NearStoreInformationScoreItem(
-           likesScoreStoreSubsection = likesScoreStoreSubsection
-       )
-   }
+    Column(
+        modifier = modifier.padding(start = 10.dp)
+    ) {
+        textCommonHomePage(
+            modifier =  modifier.width(188.dp),
+            stringResTextEntry = nameStoreSubsection,
+            maxLinesResParameter = 1,
+            lineHeightParameter = 14.sp,
+            lineHeightStyle = LineHeightStyle.Alignment.Bottom,
+            fontSizeStyleParameter = typography.bodySmall.fontSize,
+            fontFamilyStyleParameter = typography.bodyLarge.fontFamily,
+            colorStyleParameter = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+        textCommonHomePage(
+            modifier = modifier.width(188.dp),
+            stringResTextEntry = productsStoreSubsection,
+            maxLinesResParameter = 1,
+            lineHeightParameter = 9.sp ,
+            fontSizeStyleParameter = 9.sp,
+            fontFamilyStyleParameter =  FontFamily(Font(R.font.raleway_semi_bold)),
+            colorStyleParameter = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+    }
 }
 
 
@@ -208,26 +201,15 @@ fun NearStoreInformationScoreItem(
     = R.string.description_heart_score_subsection_near_store,
     @StringRes  likesScoreStoreSubsection: Int
 ){
-    Row {
-        Text(
-            text = stringResource(id =likesScoreStoreSubsection),
-            style = LocalTextStyle.current.merge(
-                TextStyle(
-                    lineHeight = 10.sp,
-                    platformStyle = PlatformTextStyle(
-                        includeFontPadding = false
-                    ),
-                    fontSize =10.sp,
-                    lineHeightStyle = LineHeightStyle(
-                        alignment = LineHeightStyle.Alignment.Bottom,
-                        trim = LineHeightStyle.Trim.None
-                    ),
-                    fontFamily = FontFamily(
-                        Font(R.font.raleway_regular)
-                    ),
-                    color =  MaterialTheme.colorScheme.onPrimaryContainer
-                )
-            )
+    Row(
+    ) {
+        textCommonHomePage(
+            stringResTextEntry = likesScoreStoreSubsection,
+            maxLinesResParameter = 1,
+            lineHeightParameter = 10.sp,
+            fontSizeStyleParameter = 10.sp,
+            fontFamilyStyleParameter = FontFamily(Font(R.font.raleway_regular)),
+            colorStyleParameter = MaterialTheme.colorScheme.onPrimaryContainer
         )
         Icon(
             painter = painterResource(id = R.drawable.heart_icon),
@@ -247,37 +229,47 @@ fun StateAndPositionInformation(
     @StringRes statePositionNearYouStoreSubsection: Int
 ) {
    Row(
-       modifier = modifier.height(45.dp)
+       modifier = modifier
+           .padding(start = 10.dp)
+           .width(188.dp)
+           .height(45.dp),
+       verticalAlignment = Alignment.CenterVertically,
+       horizontalArrangement = Arrangement.SpaceBetween
+
    ) {
-       Image(
-           painter = painterResource(id = R.drawable.cartel_abierto),
-           contentDescription = "",
-           modifier = modifier
-               .width(28.dp)
-               .height(31.14.dp)
-               .padding(top = 8.dp)
-       )
        Column(
            modifier = modifier
                .fillMaxHeight()
-               .width(100.dp),
-           horizontalAlignment = Alignment.End
+               .width(115.dp)
+               .padding(bottom = 5.dp),
+           horizontalAlignment = Alignment.CenterHorizontally,
+           verticalArrangement = Arrangement.Bottom
        ) {
-           ScoreStartItem()
-           StateAndPositionInformationItem(
-               imageIcon = R.drawable.watch_statestore_item,
-               stateOpenCloseAndPosition = stateOpenCloseStoreSubsection,
-               fontStyle = R.font.raleway_regular,
-               fonSizeItem = 8.sp
-           )
+
            StateAndPositionInformationItem(
                imageIcon = R.drawable.icon_position_item_nearstore,
                stateOpenCloseAndPosition = statePositionNearYouStoreSubsection,
                fontStyle = R.font.raleway_regular,
                fonSizeItem = 9.sp
            )
-//           Spacer(modifier = modifier.height(3.dp))
+           Spacer(modifier = modifier.height(3.dp))
+           StateAndPositionInformationItem(
+               imageIcon = R.drawable.watch_statestore_item_two,
+               stateOpenCloseAndPosition = stateOpenCloseStoreSubsection,
+               fontStyle = R.font.raleway_regular,
+               fonSizeItem = 8.sp
+           )
 
+       }
+       Column(
+           modifier = modifier
+               .padding(top = 2.dp, end = 5.dp)
+               .height(45.dp),
+           horizontalAlignment = Alignment.End
+       ) {
+           ScoreStartItem()
+           Spacer(modifier = modifier.height(4.dp))
+           StateOpenCloseRealTimeNearStore()
        }
    }
 }
@@ -290,42 +282,29 @@ fun StateAndPositionInformationItem(
     @FontRes fontStyle: Int,
     fonSizeItem: TextUnit
 ){
-    Column {
-        Row {
-            Text(
-                modifier = modifier
-                    .width(90.dp)
-                    .padding(end = 3.dp),
-                text = stringResource(id = stateOpenCloseAndPosition),
-                maxLines = 2,
-                textAlign = TextAlign.End,
-                style = LocalTextStyle.current.merge(
-                    TextStyle(
-                        lineHeight = fonSizeItem,
-                        platformStyle = PlatformTextStyle(
-                            includeFontPadding = false
-                        ),
-                        fontSize =fonSizeItem,
-                        lineHeightStyle = LineHeightStyle(
-                            alignment = LineHeightStyle.Alignment.Bottom,
-                            trim = LineHeightStyle.Trim.None
-                        ),
-                        fontFamily = FontFamily(
-                            Font(fontStyle)
-                        ),
-                        color =  MaterialTheme.colorScheme.onPrimaryContainer
-                    )
-                )
-            )
-            Icon(
-                painter = painterResource(id = imageIcon),
-                contentDescription ="",
-                tint = MaterialTheme.colorScheme.onPrimaryContainer,
-                modifier = modifier
-                    .width(10.dp)
-                    .height(10.dp)
-            )
-        }
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(
+            painter = painterResource(id = imageIcon),
+            contentDescription ="",
+            tint = colorResource(id = R.color.color_icons_items_open_and_state),
+            modifier = modifier
+                .width(8.dp)
+                .height(8.dp)
+        )
+        Spacer(modifier = modifier.width(4.dp))
+        textCommonHomePage(
+            modifier = modifier
+                .width(100.dp)
+                .padding(end = 3.dp),
+            stringResTextEntry = stateOpenCloseAndPosition,
+            maxLinesResParameter = 2,
+            lineHeightParameter = 9.sp,
+            fontSizeStyleParameter = 9.sp ,
+            fontFamilyStyleParameter = FontFamily(Font(R.font.raleway_semi_bold)),
+            colorStyleParameter = MaterialTheme.colorScheme.onPrimaryContainer
+        )
     }
 }
 
@@ -334,44 +313,64 @@ fun StateAndPositionInformationItem(
 fun ScoreStartItem(
     modifier: Modifier = Modifier
 ) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
-        modifier =modifier
+    Icon(
+        painter = painterResource(id = R.drawable.starss),
+        contentDescription ="",
+        tint = colorResource(id = R.color.color_stars),
+        modifier = modifier
+            .width(63.dp)
+            .height(13.dp)
+    )
+}
 
+@Composable
+fun LikesReactions(
+    modifier: Modifier = Modifier
+){
+    Box(
+        modifier = modifier
+            .clip(CircleShape)
+            .background(MaterialTheme.colorScheme.primaryContainer)
+            .width(24.dp)
+            .height(24.dp),
+        contentAlignment = Alignment.Center
     ) {
-        for(i in 1..3){
-            Icon(
-                painter = painterResource(id = R.drawable.starnew),
-                contentDescription ="",
-                tint = MaterialTheme.colorScheme.onPrimaryContainer,
-                modifier = modifier
-                    .width(10.dp)
-                    .height(10.dp)
-            )
-        }
         Icon(
-            painter = painterResource(id = R.drawable.star_mediumfill),
-            contentDescription ="",
+            painter = painterResource(id = R.drawable.heart_icon),
+            contentDescription = "",
             tint = MaterialTheme.colorScheme.onPrimaryContainer,
-            modifier = modifier
-                .width(10.dp)
-                .height(10.dp)
-
-        )
-        Icon(
-            painter = painterResource(id = R.drawable.starfill),
-            contentDescription ="",
-            tint = MaterialTheme.colorScheme.onPrimaryContainer,
-            modifier = modifier
-                .width(10.dp)
-                .height(10.dp)
+            modifier = Modifier
+                .width(16.dp)
+                .height(16.dp)
 
         )
     }
 }
+
+
 @Composable
-@Preview
+fun StateOpenCloseRealTimeNearStore(
+    modifier: Modifier = Modifier
+){
+   textCommonHomePage(
+       stringResTextEntry = R.string.state_open_and_close_open,
+       maxLinesResParameter = 1,
+       lineHeightParameter = 9.sp,
+       fontSizeStyleParameter = 9.sp,
+       fontFamilyStyleParameter = FontFamily(Font( R.font.raleway_medium)),
+       colorStyleParameter = MaterialTheme.colorScheme.onPrimaryContainer,
+       modifier = modifier
+           .clip(CircleShape)
+           .background(colorResource(id = R.color.state_open_close_real_time_near_store))
+           .padding(start = 10.dp, end = 10.dp, top = 2.dp, bottom = 2.dp)
+
+   )
+}
+
+
+
+@Composable
+@Preview(showBackground = true)
 fun CardStoresHomePreview(){
     EnsayoTheme {
         ContentSectionNearStore(
@@ -447,5 +446,21 @@ fun StateAndPositionInformationPreview(){
 fun ScoreStartItemPreview(){
     EnsayoTheme {
         ScoreStartItem()
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun LikesReactionsPreview(){
+    EnsayoTheme {
+        LikesReactions()
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun StateOpenCloseRealTimeNearStorePreview(){
+    EnsayoTheme {
+        StateOpenCloseRealTimeNearStore()
     }
 }

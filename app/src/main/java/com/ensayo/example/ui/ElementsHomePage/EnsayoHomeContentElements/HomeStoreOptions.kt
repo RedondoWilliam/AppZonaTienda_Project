@@ -35,6 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ensayo.example.data.local.StoresBottom
+import com.ensayo.example.ui.commonElements.textCommonHomePage
 import com.ensayo.example.ui.theme.EnsayoTheme
 import com.example.ensayo.R
 
@@ -63,7 +64,7 @@ fun HomeStoreOptions(
 
 
 @Composable
-private fun ContentPrincipalSubSection(
+ fun ContentPrincipalSubSection(
     modifier: Modifier = Modifier,
     @DrawableRes imageSubSectionPrincipal: Int,
     @StringRes titleSubSectionPrincipal: Int,
@@ -80,46 +81,23 @@ private fun ContentPrincipalSubSection(
             contentScale = ContentScale.Crop
         )
         SelectionContainer {
-            Text(
-                text = stringResource(id = titleSubSectionPrincipal),
-                style = LocalTextStyle.current.merge(
-                    TextStyle(
-                        lineHeight = 14.sp,
-                        platformStyle = PlatformTextStyle(
-                            includeFontPadding = false
-                        ),
-                        fontSize = MaterialTheme.typography.bodyMedium.fontSize,
-                        lineHeightStyle = LineHeightStyle(
-                            alignment = LineHeightStyle.Alignment.Bottom,
-                            trim = LineHeightStyle.Trim.None
-                        ),
-                        fontFamily = FontFamily(
-                            Font(R.font.raleway_medium)
-                        ),
-                    )
-                )
+            textCommonHomePage(
+                stringResTextEntry = titleSubSectionPrincipal,
+                maxLinesResParameter = 1,
+                lineHeightParameter = 14.sp,
+                fontSizeStyleParameter = MaterialTheme.typography.bodyMedium.fontSize,
+                fontFamilyStyleParameter = FontFamily(Font(R.font.raleway_medium)),
+                colorStyleParameter = MaterialTheme.colorScheme.onBackground
             )
         }
         SelectionContainer {
-            Text(
-                modifier = modifier,
-                text = stringResource(id = subTitleSubSectionPrincipal),
-                fontSize = MaterialTheme.typography.bodyMedium.fontSize,
-                fontFamily = FontFamily(
-                    Font(R.font.raleway_extra_light)
-                ),
-                style = LocalTextStyle.current.merge(
-                    TextStyle(
-                        lineHeight = 14.sp,
-                        platformStyle = PlatformTextStyle(
-                            includeFontPadding = false
-                        ),
-                        lineHeightStyle = LineHeightStyle(
-                            alignment = LineHeightStyle.Alignment.Top,
-                            trim = LineHeightStyle.Trim.None
-                        )
-                    )
-                )
+            textCommonHomePage(
+                stringResTextEntry = subTitleSubSectionPrincipal,
+                maxLinesResParameter = 1,
+                lineHeightParameter = 14.sp,
+                fontSizeStyleParameter = MaterialTheme.typography.bodyMedium.fontSize,
+                fontFamilyStyleParameter = FontFamily(Font(R.font.raleway_extra_light)) ,
+                colorStyleParameter = MaterialTheme.colorScheme.onBackground
             )
         }
     }

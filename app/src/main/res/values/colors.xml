@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="boxgray">#FFEBE7E7</color>
     <color name="background">#FF001F2A</color>
+    <color name="state_open_close_real_time_near_store">#FF00FFC2</color>
+    <color name="color_stars">#FF9747FF</color>
+    <color name="color_icons_items_open_and_state">#FF6C6C6C</color>
+    <color name="color_content_information_nears_stores">#FFFFFFFF</color>
 </resources>

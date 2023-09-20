@@ -27,6 +27,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -57,13 +58,32 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.compose.ui:ui")
+
+
+//    pendiente
+//    implementation ("androidx.compose.ui:ui:1.6.0-alpha05")
+
+
+
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
-    implementation("androidx.compose.foundation:foundation-layout-android:1.5.0")
-    implementation ("androidx.compose.material:material-icons-core:1.5.0")
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    implementation("androidx.compose.foundation:foundation-layout-android:1.5.1")
+    implementation ("androidx.compose.material:material-icons-core:1.5.1")
+    implementation("androidx.navigation:navigation-runtime-ktx:2.7.2")
+    implementation("androidx.navigation:navigation-compose:2.7.2")
+
+//    pendientes:
+//
+//    implementation("androidx.compose.compiler:compiler:1.5.3")
+//    implementation("androidx.compose.foundation:foundation:1.5.1")
+
+//
+//    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+//    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
 
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.06.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")

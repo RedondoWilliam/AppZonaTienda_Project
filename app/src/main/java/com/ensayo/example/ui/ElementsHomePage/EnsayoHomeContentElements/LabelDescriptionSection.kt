@@ -1,5 +1,6 @@
 package com.ensayo.example.ui.ElementsHomePage.EnsayoHomeContentElements
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ensayo.example.ui.commonElements.textCommonHomePage
 import com.ensayo.example.ui.theme.EnsayoTheme
 import com.example.ensayo.R
 
@@ -25,7 +27,7 @@ import com.example.ensayo.R
 @Composable
 fun DescriptionSectionCard(
     modifier: Modifier = Modifier,
-    options: String,
+    @StringRes options: Int,
 ){
     OptionsCardSections(options = options)
 }
@@ -34,7 +36,7 @@ fun DescriptionSectionCard(
 @Composable
 fun OptionsCardSections(
     modifier: Modifier = Modifier,
-    options: String,
+    @StringRes options: Int,
     maxLines: Int = 1
 ){
     Row(
@@ -43,14 +45,14 @@ fun OptionsCardSections(
         modifier = modifier
             .padding(start = 10.dp, end = 10.dp),
     ) {
-        Text(
-            text = options,
-            fontSize = MaterialTheme.typography.bodyLarge.fontSize,
-            textAlign = TextAlign.Start,
-            fontFamily = FontFamily(
-                Font(R.font.raleway_bold)
-            )
 
+        textCommonHomePage(
+            stringResTextEntry = options,
+            maxLinesResParameter = 1,
+            lineHeightParameter = MaterialTheme.typography.bodyLarge.fontSize,
+            fontSizeStyleParameter = MaterialTheme.typography.bodyLarge.fontSize,
+            fontFamilyStyleParameter =  FontFamily(Font(R.font.raleway_bold)),
+            colorStyleParameter = MaterialTheme.colorScheme.onBackground
         )
     }
 }
@@ -59,6 +61,6 @@ fun OptionsCardSections(
 @Preview
 private fun DescriptionSectionCardPreview(){
     EnsayoTheme {
-        DescriptionSectionCard(options = "Tiendas cerca")
+        DescriptionSectionCard(options = R.string.principal)
     }
 }

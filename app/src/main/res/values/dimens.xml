@@ -2,4 +2,6 @@
 <resources>
     <dimen name="list_homapage_vertical_spacing">3dp</dimen>
     <dimen name="aspec_ratio_image_profile">30dp</dimen>
+    <dimen name="nearstoreinformationnameanddescription_width_title_text">91</dimen>
+    <dimen name="nearstoreinformationnameanddescription_maxlinesresparameter_title">1</dimen>
 </resources>

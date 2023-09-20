@@ -85,8 +85,6 @@ fun FloatingActionBottonScreen(
         )
     }
 }
-
-
 @Composable
 @Preview(showBackground = true)
 fun FloatingActionBottonScreenPreview(){
@@ -104,6 +102,7 @@ fun FloatingActionBottonScreenPreview(){
 
     }
 }
+
 @Composable
 @Preview(showBackground = true)
 fun FloatingActionBottonScreenPreviewlightTheme(){

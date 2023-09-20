@@ -57,34 +57,79 @@
 
 <!--    elementos temporales **************************************************************,-->
 
+
+    <string name="suggestnameapp_zonatienda">ZonaTienda</string>
+    <string name="recientes">Recientes</string>
+
+
 <!--    tienda cerca 1-->
+
+    <string name="principal">Principal</string>
     <string name="element_likes_score_first">3.2k</string>
     <string name="element_starts_score_first">5</string>
     <string name="element_nameitem_nearstore_first">Papelería Bar</string>
     <string name="element_descriptionresumestore_nearstore_first">Cuadernos de marca personalizados</string>
-    <string name="element_hours_store_nearstore_first">Abierto hasta las 8 PM</string>
+    <string name="element_hours_store_nearstore_first">Cierra las 9 PM</string>
     <string name="element_estimated_position_nearstore_first">A 5 minutos de tí.</string>
 
 <!--    tienda cerca 2-->
     <string name="element_likes_score_second">300</string>
     <string name="element_nameitem_nearstore_second">Libreria José</string>
     <string name="element_descriptionresumestore_nearstore_second">Libros de todos los temas</string>
-    <string name="element_hours_store_nearstore_second">Abierto hasta las 11 PM</string>
+    <string name="element_hours_store_nearstore_second">Cierra las 9 PM</string>
     <string name="element_estimated_position_nearstore_second">A 10 minutos de tí.</string>
 
     <!--    tienda cerca 3-->
     <string name="element_likes_score_third">800</string>
     <string name="element_nameitem_nearstore_third">S.T.Phones</string>
     <string name="element_descriptionresumestore_nearstore_third">Servicio técnico profesional</string>
-    <string name="element_hours_store_nearstore_third">Abierto hasta las 9 PM</string>
+    <string name="element_hours_store_nearstore_third">Cierra las 9 PM</string>
     <string name="element_estimated_position_nearstore_third">A 9 minutos de tí.</string>
 
     <!--    tienda cerca 4-->
     <string name="element_likes_score_four">1.2k</string>
     <string name="element_nameitem_nearstore_four">Peluquería Aleja</string>
     <string name="element_descriptionresumestore_nearstore_four">Servicio Profesional de cortes</string>
-    <string name="element_hours_store_nearstore_four">Abierto hasta las 10 PM</string>
+    <string name="element_hours_store_nearstore_four">Cierra las 9 PM</string>
     <string name="element_estimated_position_nearstore_four">A 3 minutos de tí.</string>
+
+
+    <!--    Home Section Suggest For You-->
+    <string name="panaderias">Panaderías</string>
+    <string name="tintorerias">Tintorerias</string>
+    <string name="spa">Spa</string>
+    <string name="peluquerias">Peluquerias</string>
+    <string name="sitios_cerca">20 sitios cerca</string>
+
+
+    <!--   ID Home options Section-->
+    <string name="id_home">HOME</string>
+    <string name="id_mis_tiendas">MIS_TIENDAS</string>
+    <string name="id_domicilio">DOMICILIO</string>
+    <string name="id_preguntame">PREGUNTAME</string>
+    <string name="id_devoluciones">DEVOLUCIONES</string>
+    <string name="id_actividad">ACTIVIDAD</string>
+    <string name="id_parche">PARCHE</string>
+    <string name="id_eventos">EVENTOS</string>
+    <string name="id_trabajos">TRABAJOS</string>
+    <string name="id_ofertas">OFERTAS</string>
+
+    <!--   Name items Home options Section-->
+    <string name="name_item_parche">Parche</string>
+    <string name="name_item_eventos">Eventos</string>
+    <string name="name_item_trabajos">Trabajos</string>
+    <string name="name_item_ofertas">Ofertas</string>
+
+
+    <!--    StateOpenCloseRealTimeNearStore-->
+    <string name="state_open_and_close_open">Abierto</string>
+    <string name="state_open_and_close">Cerrado</string>
+
+
+
+
+
+
 
 
 
